@@ -73,25 +73,32 @@ CodeHive is a Next.js-based video interviewing platform designed to streamline r
 
 ### Dependencies
 CodeHive is built using modern web technologies and libraries to provide real-time video interviews with authentication, database management, and screen recording. Below is a breakdown of all the dependencies used in this project.
-## Core Dependencies
-| Package   | Version  |  Description |
-| --------- | -------- |  ----------- |
-| next      | ^14.2.23 |  React framework for SSR & SSG |
-| react     | ^18.3.1  | Core library for building UI |
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
+## 🔹 Core Frameworks
+- next – React framework for SSR & static site generation.
+- react & react-dom – UI library for building components.
+## 🔹 UI & Styling
+- tailwindcss – Utility-first CSS framework for styling.
+- shadcn/ui – Prebuilt UI components (buttons, inputs, modals).
+- @monaco-editor/react – Integrated code editor for technical interviews.
+- next-themes – Dark mode toggle support.
+## 🔹 Authentication & Security
+- @clerk/nextjs – Handles user authentication & authorization.
+- svix – Webhook service for syncing Clerk users with the database.
+- jsonwebtoken – JWT authentication for secure API requests.
+## 🔹 Database & Backend
+convex – Real-time database for storing interview data & users.
+axios – Makes API requests for backend communication.
+🔹 Video Calls & Real-time Communication
+@stream-io/video-react-sdk – Client-side SDK for video calls & screen sharing.
+@stream-io/node-sdk – Backend SDK for generating authentication tokens.
+🔹 Utility Libraries
+clsx – Utility for dynamically managing class names.
+date-fns – Date formatting and time calculations.
+lucide-react – Icon library for a modern UI.
+🔹 Developer Tools
+eslint – Ensures best coding practices.
+prettier – Formats code for consistency.
+typescript – Provides type safety and prevents runtime errors.
 
 ## 🎯 Conclusion
 This project is a full-featured video interviewing platform built using Next.js, Clerk, Convex, and GetStream to provide real-time video calls, authentication, and database management.
