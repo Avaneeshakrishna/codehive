@@ -105,4 +105,4 @@ This project is a full-featured video interviewing platform built using Next.js,
 
 ## Acknowledgments
 
-Inspiration & Tutorial https://www.youtube.com/watch?v=xEnnRNH_lyw
+Inspiration & Tutorial [link](https://www.youtube.com/watch?v=xEnnRNH_lyw)
