@@ -10,10 +10,18 @@ export function cn(...inputs: ClassValue[]) {
 type Interview = Doc<"interviews">;
 type User = Doc<"users">;
 
-export const groupInterviews = (interviews: Interview[]) => {
-  if (!interviews) return {};
+// Define a type for grouped interviews
+type InterviewGroups = {
+  succeeded?: Interview[];
+  failed?: Interview[];
+  completed?: Interview[];
+  upcoming?: Interview[];
+};
 
-  return interviews.reduce((acc: any, interview: Interview) => {
+export const groupInterviews = (interviews: Interview[]): InterviewGroups => {
+  if (!interviews || !Array.isArray(interviews)) return {};
+
+  return interviews.reduce<InterviewGroups>((acc, interview) => {
     const date = new Date(interview.startTime);
     const now = new Date();
 
@@ -36,11 +44,10 @@ export const getCandidateInfo = (users: User[], candidateId: string) => {
   return {
     name: candidate?.name || "Unknown Candidate",
     image: candidate?.image || "",
-    initials:
-      candidate?.name
-        ?.split(" ")
-        .map((n) => n[0])
-        .join("") || "UC",
+    initials: candidate?.name
+      ?.split(" ")
+      .map((n) => n[0])
+      .join("") || "UC",
   };
 };
 
@@ -48,16 +55,15 @@ export const getInterviewerInfo = (users: User[], interviewerId: string) => {
   const interviewer = users?.find((user) => user.clerkId === interviewerId);
   return {
     name: interviewer?.name || "Unknown Interviewer",
-    image: interviewer?.image,
-    initials:
-      interviewer?.name
-        ?.split(" ")
-        .map((n) => n[0])
-        .join("") || "UI",
+    image: interviewer?.image || "",
+    initials: interviewer?.name
+      ?.split(" ")
+      .map((n) => n[0])
+      .join("") || "UI",
   };
 };
 
-export const calculateRecordingDuration = (startTime: string, endTime: string) => {
+export const calculateRecordingDuration = (startTime: string, endTime: string): string => {
   const start = new Date(startTime);
   const end = new Date(endTime);
 
@@ -73,12 +79,12 @@ export const calculateRecordingDuration = (startTime: string, endTime: string) =
     return `${duration.minutes}:${String(duration.seconds).padStart(2, "0")}`;
   }
 
-  return `${duration.seconds} seconds`;
+  return `${duration.seconds ?? 0} seconds`;
 };
 
-export const getMeetingStatus = (interview: Interview) => {
+export const getMeetingStatus = (interview: Interview): string => {
   const now = new Date();
-  const interviewStartTime = interview.startTime;
+  const interviewStartTime = new Date(interview.startTime);
   const endTime = addHours(interviewStartTime, 1);
 
   if (
