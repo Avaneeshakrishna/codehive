@@ -25,65 +25,59 @@ CodeHive is a Next.js-based video interviewing platform designed to streamline r
 * Deployment: Vercel / Any Cloud Provider
 
 ## Getting Started
-1. Install Next.js
-   ```python
-   npx create-next-app@14.2.23 .
-   npm run dev  # Start the development server
+1. Clone the Repository
    ```
-2. Install UI Components (Shadcn)
-   ```python
-   npx shadcn@latest init
-   npx shadcn@latest add button card dropdown-menu dialog input switch resizable avatar calendar scroll-area select
+   git clone https://github.com/Avaneeshakrishna/codehive.git
+   cd codehive
    ```
-3. Setup Authentication (Clerk)
-   ```python
-   npm install @clerk/nextjs
+2. Install Dependencies
    ```
-   Go to Clerk Dashboard. Get the API keys and add them to .env
+   npm install
    ```
+3. Configure Environment Variables
+   - Create a .env.local file in the root directory and add the required API keys.
+   ```
+   # Clerk Authentication
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
    CLERK_SECRET_KEY=your_clerk_secret_key
-   ```
-4. Setup Database with Convex
-   ```
-   npm install convex
-   npx convex dev  # Always open in a separate terminal
-   ```
-5. Setup Video Calling with GetStream
-   ```
-   npm install @stream-io/video-react-sdk
-   npm install @stream-io/node-sdk  # Backend SDK for creating tokens
-   ```
-   Go to GetStream.io, Create an App and Save the Key & Secret to .env:
-   ```
+   
+   # Convex Database
+   CONVEX_DEPLOY_KEY=your_convex_deploy_key
+   
+   # Stream Video API
    NEXT_PUBLIC_STREAM_API_KEY=your_stream_api_key
    STREAM_SECRET=your_stream_secret
-   ```
-6. Setup JWT for Authentication
-   Goto this [link](https://docs.convex.dev/auth/clerk) and follow step 3 and step 4
-
-7. Create Convex Clerk Provider: Create ConvexClerkProvider.tsx This provider will sync Clerk users with Convex.
-8. Webhooks for Syncing Users:
-   - Go to Clerk Dashboard → Create a Webhook Endpoint.
-   - Update .env with Webhook Secret
-     ```
-     CLERK_WEBHOOK_SECRET=your_webhook_secret
-      ```
-   - Convex will listen for new users and save them automatically
    
-9. Install Webhook Service (svix)
-    ```
-    npm install svix
-    ```
-    
-
+   # Clerk Webhooks
+   CLERK_WEBHOOK_SECRET=your_clerk_webhook_secret
+   ```
+   -  Go to Clerk Dashboard to get the API keys
+   -  Go to GetStream.io, Create an App and Save the Key & Secret to .env:
+4. Run the Development Server
+   ```
+   npm run dev
+   ```
+   The app will be available at: http://localhost:3000
+5. Start Convex Database
+   ```
+   npx convex dev
+   ```
+   - Keep this running in a separate terminal.
+6. Test the Setup
+   - Visit http://localhost:3000
+   - Register/Login using Clerk authentication.
+   - Check Convex Database (npx convex dev should be running).
+   - Start a Video Call and test features like screen sharing and recording.
 
 
 
 ### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+CodeHive is built using modern web technologies and libraries to provide real-time video interviews with authentication, database management, and screen recording. Below is a breakdown of all the dependencies used in this project.
+## Core Dependencies
+| Package   | Version  |  Description |
+| --------- | -------- |  ----------- |
+| next      | ^14.2.23 |  React framework for SSR & SSG |
+| react     | ^18.3.1  | Core library for building UI |
 
 ### Installing
 
@@ -98,31 +92,9 @@ CodeHive is a Next.js-based video interviewing platform designed to streamline r
 code blocks for commands
 ```
 
-## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+## 🎯 Conclusion
+This project is a full-featured video interviewing platform built using Next.js, Clerk, Convex, and GetStream to provide real-time video calls, authentication, and database management.
 
 ## Acknowledgments
 
