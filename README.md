@@ -86,28 +86,23 @@ CodeHive is built using modern web technologies and libraries to provide real-ti
 - svix – Webhook service for syncing Clerk users with the database.
 - jsonwebtoken – JWT authentication for secure API requests.
 ## 🔹 Database & Backend
-convex – Real-time database for storing interview data & users.
-axios – Makes API requests for backend communication.
-🔹 Video Calls & Real-time Communication
-@stream-io/video-react-sdk – Client-side SDK for video calls & screen sharing.
-@stream-io/node-sdk – Backend SDK for generating authentication tokens.
-🔹 Utility Libraries
-clsx – Utility for dynamically managing class names.
-date-fns – Date formatting and time calculations.
-lucide-react – Icon library for a modern UI.
-🔹 Developer Tools
-eslint – Ensures best coding practices.
-prettier – Formats code for consistency.
-typescript – Provides type safety and prevents runtime errors.
+- convex – Real-time database for storing interview data & users.
+- axios – Makes API requests for backend communication.
+## 🔹 Video Calls & Real-time Communication
+- @stream-io/video-react-sdk – Client-side SDK for video calls & screen sharing.
+- @stream-io/node-sdk – Backend SDK for generating authentication tokens.
+## 🔹 Utility Libraries
+- clsx – Utility for dynamically managing class names.
+- date-fns – Date formatting and time calculations.
+- lucide-react – Icon library for a modern UI.
+## 🔹 Developer Tools
+- eslint – Ensures best coding practices.
+- prettier – Formats code for consistency.
+- typescript – Provides type safety and prevents runtime errors.
 
 ## 🎯 Conclusion
 This project is a full-featured video interviewing platform built using Next.js, Clerk, Convex, and GetStream to provide real-time video calls, authentication, and database management.
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Inspiration & Tutorial (link)[https://www.youtube.com/watch?v=xEnnRNH_lyw]
